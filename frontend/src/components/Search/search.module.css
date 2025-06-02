@@ -1,0 +1,28 @@
+@import "../../style/variables.css";
+
+input {
+  padding: var(--padding-medium);
+  border-radius: var(--border-radius);
+  border: 1px solid black;
+}
+
+.searchContainer {
+  display: flex;
+  gap: var(--gap-medium);
+}
+
+button {
+  background-color: var(--primary-color);
+  border-radius: var(--border-radius);
+  border: 1px solid transparent;
+  padding: var(--padding-medium);
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}

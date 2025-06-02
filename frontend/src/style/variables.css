@@ -1,0 +1,8 @@
+:root {
+  --primary-color: rgb(181, 181, 209);
+  --secondary-color: rgb(108, 108, 216);
+
+  --padding-medium: 10px;
+  --border-radius: 5px;
+  --gap-medium: 10px;
+}
