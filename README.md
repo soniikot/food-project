@@ -23,8 +23,8 @@ food-api-project/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/soniikot/food_api_project
-cd food-api-project
+git clone https://github.com/soniikot/food_project
+cd food_project
 ```
 
 2. Install dependencies for all parts of the application:
