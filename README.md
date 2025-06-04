@@ -22,7 +22,7 @@ food-api-project/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/soniikot/food_project
+git clone https://github.com/soniikot/food-project
 cd food_project
 ```
 
