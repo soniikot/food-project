@@ -23,7 +23,7 @@ food-api-project/
 
 ```bash
 git clone https://github.com/soniikot/food-project
-cd food_project
+cd food-project
 ```
 
 2. Install dependencies for all parts of the application:
