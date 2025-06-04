@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { RecipeCard } from "./RecipeCard";
 import { describe, it, expect } from "vitest";
+import "@testing-library/jest-dom";
 
 const food = {
   id: 1,

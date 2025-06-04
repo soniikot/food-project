@@ -1,15 +1,28 @@
 import styles from "./Search.module.css";
-import { useState } from "react";
-import useFetch from "../../hooks/useFetch";
+import { useEffect, useState } from "react";
+import { useFetch, type RecentSearch } from "../../hooks/useFetch";
 import { RecipeCard } from "../RecipeCard/RecipeCard";
+import { Dropdown } from "../Dropdown/Dropdown";
 
 export const Search = () => {
   const [query, setQuery] = useState("");
-  const { data, loading, error, handleSearch } = useFetch();
+  const { data, loading, error, handleSearch, getRecentSearches } = useFetch();
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [recentSearch, setRecentSearch] = useState<RecentSearch[]>([]);
 
-  const onSubmit = (e: React.FormEvent) => {
+  useEffect(() => {
+    const fetchRecentSearch = async () => {
+      const recentSearch = await getRecentSearches();
+      setRecentSearch(recentSearch);
+    };
+    fetchRecentSearch();
+  }, []);
+
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    handleSearch(query);
+    await handleSearch(query);
+    const recentSearch = await getRecentSearches();
+    setRecentSearch(recentSearch);
   };
 
   return (
@@ -20,13 +33,24 @@ export const Search = () => {
           placeholder="Search for a recipe"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
+          onFocus={() => setShowDropdown(true)}
+          onBlur={() => setTimeout(() => setShowDropdown(false), 200)}
         />
+        {showDropdown && (
+          <Dropdown
+            recentSearch={recentSearch}
+            onClickToItem={(search) => {
+              setQuery(search);
+              setShowDropdown(false);
+            }}
+          />
+        )}
+
         <button type="submit">Search</button>
       </form>
-
+      {loading && <div>Loading...</div>}
+      {error && <div>Error: {error}</div>}
       <div className={styles.results}>
-        {loading && <div>Loading...</div>}
-        {error && <div>Error: {error}</div>}
         {data &&
           data.map((recipe) => (
             <RecipeCard key={recipe.id} food={recipe} onClick={() => {}} />

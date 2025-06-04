@@ -1,0 +1,23 @@
+@import "../../style/variables.css";
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: var(--padding-medium);
+  background-color: var(--background-color);
+  width: 70%;
+}
+
+.hidden {
+  display: none;
+}
+
+.dropdownItem {
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: var(--primary-color);
+}

@@ -9,6 +9,7 @@ input {
 .searchContainer {
   display: flex;
   gap: var(--gap-medium);
+  position: relative;
 }
 
 button {

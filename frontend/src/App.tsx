@@ -1,5 +1,5 @@
 import "./App.css";
-import Search from "./components/Search/Search";
+import { Search } from "./components/Search/Search";
 
 export const App = () => {
   return (
