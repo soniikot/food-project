@@ -15,7 +15,6 @@ food-api-project/
 ## Prerequisites
 
 - Node.js (v14 or higher)
-- pnpm (v6 or higher)
 - Spoonacular API key (get it from https://spoonacular.com/food-api)
 
 ## Setup
