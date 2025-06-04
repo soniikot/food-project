@@ -1,7 +1,7 @@
 import styles from "./Search.module.css";
 import { useEffect, useState } from "react";
 import { useFetch, type RecentSearch } from "../../hooks/useFetch";
-import { RecipeCard } from "../RecipeCard/RecipeCard";
+import { RecipeCardPreview } from "../RecipeCard/RecipeCardPreview";
 import { Dropdown } from "../Dropdown/Dropdown";
 
 export const Search = () => {
@@ -53,7 +53,7 @@ export const Search = () => {
       <div className={styles.results}>
         {data &&
           data.map((recipe) => (
-            <RecipeCard key={recipe.id} food={recipe} onClick={() => {}} />
+            <RecipeCardPreview key={recipe.id} food={recipe} />
           ))}
       </div>
     </>

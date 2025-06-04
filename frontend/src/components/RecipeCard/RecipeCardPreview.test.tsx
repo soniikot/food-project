@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { RecipeCard } from "./RecipeCard";
-import { describe, it, expect } from "vitest";
+import { RecipeCardPreview } from "./RecipeCardPreview";
+import { describe, expect, it } from "vitest";
 import "@testing-library/jest-dom";
 
 const food = {
@@ -12,9 +12,9 @@ const food = {
   summary: "Food Summary",
 };
 
-describe("FoodCard", () => {
+describe("RecipeCardPreview", () => {
   it("should render the food card", () => {
-    render(<RecipeCard food={food} onClick={() => {}} />);
+    render(<RecipeCardPreview food={food} />);
     expect(screen.getByText("Food Title")).toBeInTheDocument();
     expect(screen.getByText("Calories: 100 kcal")).toBeInTheDocument();
     expect(screen.getByAltText("Food Title")).toBeInTheDocument();
