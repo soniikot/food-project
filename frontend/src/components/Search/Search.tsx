@@ -1,8 +1,9 @@
 import styles from "./Search.module.css";
 import { useState } from "react";
 import useFetch from "../../hooks/useFetch";
+import { RecipeCard } from "../RecipeCard/RecipeCard";
 
-const Search = () => {
+export const Search = () => {
   const [query, setQuery] = useState("");
   const { data, loading, error, handleSearch } = useFetch();
 
@@ -27,10 +28,10 @@ const Search = () => {
         {loading && <div>Loading...</div>}
         {error && <div>Error: {error}</div>}
         {data &&
-          data.map((recipe) => <div key={recipe.id}>{recipe.title}</div>)}
+          data.map((recipe) => (
+            <RecipeCard key={recipe.id} food={recipe} onClick={() => {}} />
+          ))}
       </div>
     </>
   );
 };
-
-export default Search;

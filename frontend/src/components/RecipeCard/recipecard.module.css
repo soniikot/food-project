@@ -1,0 +1,29 @@
+@import "../../style/variables.css";
+
+.foodItem {
+  border-radius: 5px;
+  border: 1px solid var(--primary-color);
+  margin: var(--padding-medium);
+  width: 250px;
+  height: 300px;
+}
+
+.ingredientImage {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.foodInfo {
+  text-align: center;
+}
+
+.foodTitle {
+  font-weight: 600;
+  text-align: center;
+}
