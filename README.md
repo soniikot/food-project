@@ -35,7 +35,7 @@ npm install
 3. Create a `.env` file in the `api` directory with your Spoonacular API key:
 
 ```
-SPOONACULAR_API_KEY=your_api_key_here
+API_KEY=your_api_key_here
 ```
 
 ## Running the Application
